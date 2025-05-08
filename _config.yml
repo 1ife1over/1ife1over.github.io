@@ -18,8 +18,8 @@ title: "Zhao Xiangjun" # the main title
 
 tagline: "InSAR - 雷达干涉测量" # it will display as the subtitle
 
-description: >- # used by seo meta and the atom feed
-  "聚焦合成孔径雷达干涉测量（InSAR）技术在地质灾害监测与城市沉降评估中的应用研究"
+description: 一个专注于 InSAR 技术原理与地表形变监测的博客 # used by seo meta and the atom feed
+  # "聚焦合成孔径雷达干涉测量（InSAR）技术在地质灾害监测与城市沉降评估中的应用研究"
   # A minimal, responsive and feature-rich Jekyll theme for technical writing.
 
 # Fill in the protocol & hostname for your site.
@@ -30,7 +30,7 @@ github:
   username: 1ife1over # change to your GitHub username
 
 twitter:
-  username: twitter_zx # change to your Twitter username
+  username: twitter_zxj # change to your Twitter username
 
 social:
   # Change to your full name.
@@ -123,11 +123,11 @@ comments:
     repo: 1ife1over/1ife1over.github.io # <gh-username>/<repo>
     repo_id: "R_kgDOOmdXug"
     category: Discussions
-    category_id:
+    category_id: "DIC_kwDOOmdXus4Cp6Zd"
     mapping: # optional, default to 'pathname'
     strict: # optional, default to '0'
     input_position: # optional, default to 'bottom'
-    lang: # optional, default to the value of `site.lang`
+    lang: zh-CN # optional, default to the value of `site.lang`
     reactions_enabled: # optional, default to the value of `1`
 
 # Self-hosted static assets, optional › https://github.com/cotes2020/chirpy-static-assets
