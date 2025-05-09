@@ -1,43 +1,51 @@
-# Chirpy Starter
+# 🚀 🛰️ 🌍 1ife1over's InSAR 网站
 
 [![Gem Version](https://img.shields.io/gem/v/jekyll-theme-chirpy)][gem]&nbsp;
 [![GitHub license](https://img.shields.io/github/license/cotes2020/chirpy-starter.svg?color=blue)][mit]
 
-When installing the [**Chirpy**][chirpy] theme through [RubyGems.org][gem], Jekyll can only read files in the folders
-`_data`, `_layouts`, `_includes`, `_sass` and `assets`, as well as a small part of options of the `_config.yml` file
-from the theme's gem. If you have ever installed this theme gem, you can use the command
-`bundle info --path jekyll-theme-chirpy` to locate these files.
+欢迎访问我的 GitHub 个人仓库！  
+这是一个基于 Jekyll + Chirpy 主题构建的静态网页，专注于 **InSAR 技术学习与实践分享**，旨在帮助自己记录、也帮助更多从事地表形变监测的同学更高效地学习相关知识。
 
-The Jekyll team claims that this is to leave the ball in the user’s court, but this also results in users not being
-able to enjoy the out-of-the-box experience when using feature-rich themes.
+---
 
-To fully use all the features of **Chirpy**, you need to copy the other critical files from the theme's gem to your
-Jekyll site. The following is a list of targets:
+## 🔍 网站功能
 
-```shell
-.
-├── _config.yml
-├── _plugins
-├── _tabs
-└── index.html
-```
+- 📖 记录学习 InSAR 数据处理的心得
+- 🧪 分享地表沉降、地下水等实际应用中的案例笔记
+- 🛠 提供常用工具（如 GMTSAR、MATLAB、ARCGIS）的使用经验
+- 💡 发布个人编写的脚本与处理经验
+- 👨‍🔬 逐步建设一个系统化的 InSAR 学习资源平台
 
-To save you time, and also in case you lose some files while copying, we extract those files/configurations of the
-latest version of the **Chirpy** theme and the [CD][CD] workflow to here, so that you can start writing in minutes.
+## 🧑‍🎓 作者简介
 
-## Usage
+我是一名来自 **中国矿业大学（北京）** 的博士研究生，专业方向为 **测绘科学与技术**。研究兴趣包括：
 
-Check out the [theme's docs](https://github.com/cotes2020/jekyll-theme-chirpy/wiki).
+- 🛰️ InSAR 数据处理与算法优化  
+- 🌊 地下水与地面沉降动态监测  
+- 🗺️ 地球物理建模与参数反演  
 
-## Contributing
+欢迎同行朋友交流合作。
 
-This repository is automatically updated with new releases from the theme repository. If you encounter any issues or want to contribute to its improvement, please visit the [theme repository][chirpy] to provide feedback.
+---
+## 📌 如何访问博客
 
-## License
+你可以通过 GitHub Pages 地址访问：
 
-This work is published under [MIT][mit] License.
+👉 [https://1ife1over.github.io](https://1ife1over.github.io)
 
-[gem]: https://rubygems.org/gems/jekyll-theme-chirpy
-[chirpy]: https://github.com/cotes2020/jekyll-theme-chirpy/
-[CD]: https://en.wikipedia.org/wiki/Continuous_deployment
-[mit]: https://github.com/cotes2020/chirpy-starter/blob/master/LICENSE
+或者直接在浏览器输入 `1ife1over.github.io`
+
+---
+
+## 📫 联系我
+
+- GitHub: [@1ife1over](https://github.com/1ife1over)
+- Email: chaohsiangchun@foxmail.com
+
+如果你在 InSAR、地面沉降监测等领域有兴趣，欢迎联系我交流！
+
+---
+
+## 🌟 Star 一下支持我吧！
+
+如果你觉得这个博客项目对你有帮助，欢迎点个 ⭐ Star 支持一下！
