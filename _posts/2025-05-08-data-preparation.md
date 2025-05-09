@@ -27,7 +27,8 @@ author: 1ife1over
     ```bash
     unzip_s1_parallel.csh Sentinel-1/zipfile/path  ncores
     ```
-   
+   - 文件命名规则如下
+   ![图片说明文字](/assets/img/picture/p5.png)
 
 
 - 使用以下命令将工作目录中所有 `.SAFE` 文件生成 `safe.list`（**绝对路径**）：
