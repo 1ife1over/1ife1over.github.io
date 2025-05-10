@@ -6,7 +6,6 @@ tags: [Sentinel-1, GMTSAR, 数据预处理, 拼接, 裁剪]
 pin: false
 toc: true
 comments: true
-author: 1ife1over
 ---
 
 > 🚀📘 本文为 InSAR 学习笔记第一篇，主要记录 Sentinel-1 SLC 数据在 GMTSAR 中进行拼接与裁剪的基本操作，适用于后续 InSAR 干涉处理的准备阶段。

@@ -18,7 +18,8 @@ title: "Zhao Xiangjun" # the main title
 
 tagline: "InSAR - 雷达干涉测量" # it will display as the subtitle
 
-description: 一个专注于 InSAR 技术原理与地表形变监测的博客 # used by seo meta and the atom feed
+description:
+  一个专注于 InSAR 技术原理与地表形变监测的博客 # used by seo meta and the atom feed
   # "聚焦合成孔径雷达干涉测量（InSAR）技术在地质灾害监测与城市沉降评估中的应用研究"
   # A minimal, responsive and feature-rich Jekyll theme for technical writing.
 
@@ -35,7 +36,7 @@ twitter:
 social:
   # Change to your full name.
   # It will be displayed as the default author of the posts and the copyright owner in the Footer
-  name: Zhao Xiangjun
+  name: 1ife1over
   email: "chaohsiangchun@foxmail.com" # change to your email address
   links:
     # The first element serves as the copyright owner's link

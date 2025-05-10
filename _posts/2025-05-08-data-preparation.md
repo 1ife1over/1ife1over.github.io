@@ -6,7 +6,6 @@ tags: [Sentinel-1, Envisat, DEM, Orbit]
 pin: false
 toc: true
 comments: true
-author: 1ife1over
 ---
 
 
