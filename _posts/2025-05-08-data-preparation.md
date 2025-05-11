@@ -19,10 +19,16 @@ comments: true
 - 数据解压后，一般不保留vh极化数据。
 
     单个文件解压，可选择脚本`unzip_sentinel-1.csh`
+
+    [unzip_sentinel-1.csh](/code/unzip_sentinel-1.csh)
+
     ```bash
     unzip_sentinel-1.csh Sentinel-1/zipfile/path
     ```
     批量数据并行解压，可选择脚本`unzip_s1_parallel.csh`
+
+    [unzip_s1_parallel.csh](/code/unzip_s1_parallel.csh)
+
     ```bash
     unzip_s1_parallel.csh Sentinel-1/zipfile/path  ncores
     ```
@@ -50,6 +56,9 @@ comments: true
 - 🚀 建议使用脚本下载轨道数据`*EOF`文件。在此，我建议将所有的EOF放置在一个文件夹，避免重复下载，需要使用时仅需链接即可。
     
 - 📦 使用脚本`Sentinel_1_orb_download.csh`，该脚本能够将已下载过的链接过来，没下载的下载，并把下载的存入总轨道文件夹中
+
+    [Sentinel_1_orb_download.csh](/code/Sentinel_1_orb_download.csh)
+
     ```bash
     Sentinel_1_orb_download.csh filelist
     ```

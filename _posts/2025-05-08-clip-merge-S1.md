@@ -22,7 +22,7 @@ Sentinel-1 SLC 数据通常以单个zip形式提供，每景覆盖区域约为25
 
 - 🧩 软件环境：
   - [GMTSAR 软件](https://github.com/gmtsar/gmtsar)
-  - Ubuntu22.04 环境
+  - [Ubuntu20 + 环境](https://cn.ubuntu.com)
 
 - 📦 数据裁剪：
   - 至少单个Frame的 Sentinel-1 SLC 产品（解压后为`.SAFE` 格式）
