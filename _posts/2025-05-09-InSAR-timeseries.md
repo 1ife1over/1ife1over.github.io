@@ -298,17 +298,19 @@ comments: true
     
     > thresholds一般取0.12
 
-  - 将相干性阈值文件链接到SBAS目录，运行脚本：
+  - 再将相干性阈值文件`mask_file`和地理编码文件`trans.dat`链接到SBAS目录，运行脚本：
 
     [proj_disp_ra2ll.csh](/code/proj_disp_ra2ll.csh)
     
     ```bash
-    proj_disp_ra2ll.csh
+    proj_disp_ra2ll.csh disp_ra.list mask_file
     ``` 
 
     > 生成`yyyymmdd_mask_ll.grd` 与 `vel_mask_ll.grd`文件
 
-- 接着进行参考点校正，使用脚本
+- 接着进行参考点校正，注意修改脚本里的参考点坐标。
+
+    [make_reference.csh](/code/make_reference.csh)
     
     ```bash
     make_reference.csh

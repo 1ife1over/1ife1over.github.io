@@ -60,4 +60,6 @@ proj_ra2ll.csh trans.dat vel_mask.grd vel_mask_ll.grd
 
 #rm -f vel_mask.grd
 
+ls 20*ll.grd | awk -F. '{print $1}' > disp_ll.list
+
 echo Finish geocoding velocity!
