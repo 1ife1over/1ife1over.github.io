@@ -68,6 +68,7 @@ comments: true
      mv baseline_table.dat ../
     ```
     - 检查`baseline.ps`文件，在基线图中间选择超级主影像，使所有影像在下一步的精密配准中与其配准。
+    
     ![图片说明文字](/assets/img/picture/p6.png)
 
     
@@ -133,6 +134,7 @@ comments: true
     intf_tops_parallel.csh intf.in batch_tops.config 10
     ```
     所有干涉对都存放在`intf_all`文件夹中，干涉图如下图所示
+
     ![图片说明文字](/assets/img/picture/phasefilt2.png)
 
     > 在其余子条带`F2` `F3`中重复上述操作
