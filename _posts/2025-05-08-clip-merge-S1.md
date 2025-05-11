@@ -69,9 +69,10 @@ paste -d: SAFE1.list SAFE2.list > SAFE.list
 图中黄色三角形为两个点的坐标，红框的范围是预计裁剪的范围，注意裁剪范围是根据burst确定的。两点的坐标并不是裁剪的边界。
 
 ## 5.裁剪影像
-在新目录（organized）使用脚本`create_tops_frame.csh`进行数据拼接裁剪
+在新目录（organized）使用脚本`create_tops_frame.csh`进行数据拼接裁剪， 用法如下：
 
- 用法：
+ [create_tops_frame.csh](/code/create_tops_frame.csh)
+
  ```bash
  create_tops_frame.csh SAFE.list Sentinel-1/orbit/path
  ```
