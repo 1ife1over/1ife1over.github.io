@@ -73,7 +73,7 @@ comments: true
 
     
 - ⚙️ 再进行精密配准 
-    将`data.in`中超级主影像所在行移动到文件第一行，然后进行精密配准
+    将`data.in`中超级主影像所在行移动到文件第一行，然后进行精密配准。
 
     - 运行脚本，进行精密配准
     ```bash
@@ -109,17 +109,17 @@ comments: true
     `"# 1 - start from make topo_ra"`<br>
     `"# 2 - start from make and filter interferograms, unwrap and geocode"`<br>
     `"proc_stage = 1"` <br>
-    🌟🌟🌟默认为1，从反向地理编码，生成topo_ra.grd开始。topo_ra.grd文件生成以后，可修改为2，进行并行处理
+    🌟🌟🌟默认为1，从反向地理编码，生成topo_ra.grd开始。topo_ra.grd文件生成以后，可修改为2，进行并行处理。
 
     `master_image = S1_20180426_ALL_F1`<br>
-    🌟修改为对应的超级主影像。注意F1 F2 F3也需要对应
+    🌟修改为对应的超级主影像。注意F1 F2 F3也需要对应。
 
     `range_dec = 8`<br>
     `azimuth_dec = 2`<br>
-    🌟多视参数调整，若研究区很小，可修改为4：1
+    🌟多视参数调整，若研究区很小，可修改为4：1。
     
     `dec_factor = 1`<br>
-    🌟小范围取1，大范围取2，分辨率会降低，提高运算效率
+    🌟小范围取1，大范围取2，分辨率会降低，提高运算效率。
 
 - 🌈🌈🌈 差分干涉！！！
     - 建议先将batch_tops.config中proc_stage改为1，对一个干涉对进行干涉，并检查。
@@ -133,11 +133,11 @@ comments: true
     ```bash
     intf_tops_parallel.csh intf.in batch_tops.config 10
     ```
-    所有干涉对都存放在`intf_all`文件夹中，干涉图如下图所示
+    所有干涉对都存放在`intf_all`文件夹中，干涉图如下图所示：
 
     ![图片说明文字](/assets/img/picture/phasefilt2.png)
 
-    > 在其余子条带`F2` `F3`中重复上述操作
+    > 剩余条带`F2` `F3`的处理，仅需将`F1`目录中的`intf.in`和`batch_tops.config`复制过来，并修改为`F2` `F3`即可。
 
 ---
 ## 4. 🌊 合并子条带 
@@ -148,7 +148,7 @@ comments: true
     ```
     > mode 0 是合并 3 个subswaths, mode 1 是合并 F1/F2, mode 2 is 合并 F2/F3<br>
     > 例如: `create_merge_input.csh intflist .. 0 > merge.in`
-- ⚠️注意将含有超级主影像日期的行全部置顶，确保所有图像都使用相同的坐标处理，并且最终网格大小相同
+- ⚠️注意将含有超级主影像日期的行全部置顶，确保所有图像都使用相同的坐标处理，并且最终网格大小相同。
 
 - 将配置文件`batch_tops.config`复制到`merge`目录，`dem.grd`也链接过来。
     ```bash
@@ -168,7 +168,7 @@ comments: true
 
 ---
 ## 5. 🗺️ 检查干涉对
-> 由于数据本身、处理过程、操作失误等因素，部分干涉对出现错误，我们需要检查并剔除错误干涉对
+> 由于数据本身、处理过程、操作失误等因素，部分干涉对出现错误，我们需要检查并剔除错误干涉对。
 
 - 我们先将干涉图绘制出来，使用脚本：
 
@@ -196,7 +196,7 @@ comments: true
     >  `"snaphu.csh correlation_threshold maximum_discontinuity [<rng0>/<rngf>/<azi0>/<azif>]"` <br>
     💡相干性阈值`correlation_threshold`一般选0.02 - 0.1，`maximum_discontinuity`地震相位跳跃，一般取0，`[<rng0>/<rngf>/<azi0>/<azif>]`为解缠范围，默认全部解缠。
 
-- 🌟🌟🌟通常为提高运算效率，我们选择并行解缠
+- 🌟🌟🌟通常为提高运算效率，我们选择并行解缠：
 
     [unwrap_parallel.csh](/code/unwrap_parallel.csh)
 
@@ -213,11 +213,20 @@ comments: true
     cd ..
     ```    
 
+- 📢📢📢 如果在这一步，设置了解缠范围。需要将相干性文件`correct.grd`进行对应的裁剪，使用脚本：
+
+    [corr_cut.csh](/code/corr_cut.csh)
+
+    ```bash
+    corr_cut.csh intf.list
+    ```   
+
+
 ---
 ## 7. ☁️ GACOS大气校正
 > GACOS大气校正能够较好的去除与地形相关的对流层大气误差, 通常我们用GACOS进行大气校正。
 
-- 在`merge`目录下，我们选择并行gacos校正
+- 在`merge`目录下，我们选择并行gacos校正：
 
     [make_gacos_correction_parallel.csh](/code/make_gacos_correction_parallel.csh)<br>
     [make_gacos_correction.csh](/code/make_gacos_correction.csh)
@@ -231,7 +240,7 @@ comments: true
      `set line_center = 2422`<br>
      💡这是参考点的雷达坐标，一定要修改，选择研究区内稳定参考点。
 
-    - 地理坐标系转雷达坐标系（参考点）
+    - 地理坐标系转雷达坐标系（参考点）：
 
         ```bash
         proj_ll2ra_ascii.csh trans.dat points_ll.txt points_ra.txt
@@ -239,6 +248,15 @@ comments: true
 
         > 至少需要三个点才能转换，三个点不能离得太近，不能在一条直线。<br>
             格式为`x` `y` `name`
+
+> 👀 解缠和gacos校正后的干涉对仍需检查，需剔除（或重新处理）错误干涉对，可在`merge`目录执行脚本：
+
+[gacos_select.csh](/code/gacos_select.csh)
+
+```bash
+gacos_select.csh intf.list
+```    
+
 
 ---
 ## 8. 🛠️ SBAS解算
@@ -249,6 +267,15 @@ comments: true
     ```
     > 若采用了GACOS大气校正，`unwrap.grd`应改为`unwrap_gacos_corrected_detrended.grd`
     > 脚本会生成`intf.tab`和`scene.tab`，以及一行简单的SBAS指令
+
+    - 若在前几步删除了一些干涉对（yyyyddd_yyyyddd），此时对应的intf.in应重新生成，可使用脚本：
+
+    [intflist2intfin.sh](/code/intflist2intfin.sh)
+
+    ```bash
+    intflist2intfin.sh intf.list intf.in
+    ```
+
 
 - 我们在命令行输入sbas指令：
 
@@ -286,9 +313,9 @@ comments: true
     ```bash
     post_sbas.csh
     ```
-- 然后进行掩膜和地理编码，这两步同时进行。此时的数据还是雷达坐标系，需转为地理坐标系
+- 然后进行掩膜和地理编码，这两步同时进行。此时的数据还是雷达坐标系，需转为地理坐标系。
   
-  - 先进入merge目录计算干涉对平均相干性，操作如下
+  - 先进入merge目录计算干涉对平均相干性，操作如下：
 
     [mask_meancorr.csh](/code/mask_meancorr.csh)
 
@@ -320,7 +347,7 @@ comments: true
 
     > 生成`yyyymmdd_mask_ll_referenced.grd` 与 `vel_mask_ll_referenced.grd`文件
 
-- 绘制累积形变时间按序列图
+- 绘制累积形变时间按序列图：
 
     [plot_disp_ll_zxj.csh](/code/plot_disp_ll_zxj.csh)
 
@@ -328,7 +355,7 @@ comments: true
     ls 20*referenced.grd > disp_referenced.list
     plot_disp_ll_zxj.csh disp_referenced.list -300 100
     ``` 
-- 绘制形变速率图
+- 绘制形变速率图：
 
     [plot_grd.csh](/code/plot_grd.csh)
 
@@ -337,7 +364,7 @@ comments: true
     ``` 
     > 该脚本适用于绘制任何WGS84坐标的栅格数据
 
-- grd文件转kml, 用于在Googleearth中查看
+- grd文件转kml, 用于在Googleearth中查看：
 
     ```bash
     grd2kml.csh vel_file cpt_flie 
@@ -346,10 +373,10 @@ comments: true
 ---
 ## 10. 📈 形变时间序列提取 
 
-> 时间序列分析是InSAR的关键环节，我们在这里介绍如何提取一些点位的时间序列
+> 时间序列分析是InSAR的关键环节，我们在这里介绍如何提取一些点位的时间序列。
 
 - 首先需要创建一个`points.list`, 里面每一行包含一个点的信息, 格式为`x` `y` `name`<br>
-    同时需要存在一个`grd_list`, 即我们要提取的累计形变栅格文件，一般为`disp_referenced.list`，执行脚本即可生成特征点的时间序列
+    同时需要存在一个`grd_list`, 即我们要提取的累计形变栅格文件，一般为`disp_referenced.list`，执行脚本即可生成特征点的时间序列。
 
     [extract_ts_std.csh](/code/extract_ts_std.csh)
 
@@ -359,7 +386,7 @@ comments: true
 
     > 脚本中，`gmt grdclip mask.grd -Sa0.2/NaN -Sb0.2/1 -Gmask.grd`，其中0.2即200米圆形范围内取平均，可根据需求修改。
 
-- 若需要快速提取特征点的时间序列，且不需要范围内取平均，可采用以下脚本，能够大大提高提取速度
+- 若需要快速提取特征点的时间序列，且不需要范围内取平均，可采用以下脚本，能够大大提高提取速度。
 
     [extract_ts_track.csh](/code/extract_ts_track.csh)
 
@@ -367,7 +394,7 @@ comments: true
     extract_ts_track.csh
     ``` 
 
-- 使用以下脚本可以快速绘制时间序列图像
+- 使用以下脚本可以快速绘制时间序列图像：
 
     [plot_timeseries.csh](/code/plot_timeseries.csh)
 

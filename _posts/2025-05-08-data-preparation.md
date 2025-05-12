@@ -18,21 +18,21 @@ comments: true
      下载数据压缩包`*.zip`
 - 数据解压后，一般不保留vh极化数据。
 
-    单个文件解压，可选择脚本`unzip_sentinel-1.csh`
+    单个文件解压，可选择脚本`unzip_sentinel-1.csh`：
 
     [unzip_sentinel-1.csh](/code/unzip_sentinel-1.csh)
 
     ```bash
     unzip_sentinel-1.csh Sentinel-1/zipfile/path
     ```
-    批量数据并行解压，可选择脚本`unzip_s1_parallel.csh`
+    批量数据并行解压，可选择脚本`unzip_s1_parallel.csh`：
 
     [unzip_s1_parallel.csh](/code/unzip_s1_parallel.csh)
 
     ```bash
     unzip_s1_parallel.csh Sentinel-1/zipfile/path  ncores
     ```
-   - 文件命名规则如下
+   - 文件命名规则如下：
    ![图片说明文字](/assets/img/picture/p5.png)
 
 
@@ -44,7 +44,7 @@ comments: true
 
 ## 2. Envisat ASAR 数据下载
 
-- 🔧 Envisat ASAR 数据可从 [esar-ds.eo.esa.int](https://esar-ds.eo.esa.int/socat/ASA_IMS_1P) 获取
+- 🔧 Envisat ASAR 数据可从 [esar-ds.eo.esa.int](https://esar-ds.eo.esa.int/socat/ASA_IMS_1P) 获取。
 
 ![图片说明文字](/assets/img/picture/p3.png)
 
@@ -55,7 +55,7 @@ comments: true
 
 - 🚀 建议使用脚本下载轨道数据`*EOF`文件。在此，我建议将所有的EOF放置在一个文件夹，避免重复下载，需要使用时仅需链接即可。
     
-- 📦 使用脚本`Sentinel_1_orb_download.csh`，该脚本能够将已下载过的链接过来，没下载的下载，并把下载的存入总轨道文件夹中
+- 📦 使用脚本`Sentinel_1_orb_download.csh`，该脚本能够将已下载过的链接过来，没下载的下载，并把下载的存入总轨道文件夹中。
 
     [Sentinel_1_orb_download.csh](/code/Sentinel_1_orb_download.csh)
 
@@ -64,7 +64,7 @@ comments: true
     ```
 
 ## 4. DEM 数据
-- 🚀 直接使用脚本即可快速下载`dem.grd`
+- 🚀 直接使用脚本即可快速下载`dem.grd`。
     
     命令行输入：
     ```bash

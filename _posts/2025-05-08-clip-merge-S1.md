@@ -25,9 +25,9 @@ Sentinel-1 SLC 数据通常以单个zip形式提供，每景覆盖区域约为25
   - [Ubuntu20 + 环境](https://cn.ubuntu.com)
 
 - 📦 数据裁剪：
-  - 至少单个Frame的 Sentinel-1 SLC 产品（解压后为`.SAFE` 格式）
+  - 至少单个Frame的 Sentinel-1 SLC 产品（解压后为`.SAFE` 格式）。
 - 📦 数据拼接：
-  - 至少两个相邻Frame的 Sentinel-1 SLC 产品（解压后为`.SAFE` 格式）
+  - 至少两个相邻Frame的 Sentinel-1 SLC 产品（解压后为`.SAFE` 格式）。
 
 📷 示例：SLC 数据目录结构
 
@@ -58,7 +58,7 @@ paste -d: SAFE1.list SAFE2.list > SAFE.list
 ```
 ## 4.设定裁剪范围
 - ✅ 制作pins.ll
-一般是两个点的坐标，卫星先扫描到的点放在前面（e.g. 升轨数据，纬度低的点放在第一行）
+一般是两个点的坐标，卫星先扫描到的点放在前面（e.g. 升轨数据，纬度低的点放在第一行）。
 
 ```bash
 110.82  36.68
