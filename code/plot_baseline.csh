@@ -55,7 +55,7 @@ set R1 = -R$w1/$e1/$s1/$n1
 
 
 gmt begin $point_name png
-	gmt basemap $J $R1 -Bsx1Y -Bpxa3Of1o -Byaf+l"baseline(m)" -BnSWe --FONT=10p
+	gmt basemap $J $R1 -Bsx1Y -Bpxa6Of1o -Byaf+l"Baseline (m)" -BnSWe --FONT=10p
 	gmt plot $point1 -i0,1 -Sc0.08 -Gblack --FORMAT_DATE_IN=yyyymmdd 
 	gmt plot $point1 -i0,1 -W0.3p -Gblack --FORMAT_DATE_IN=yyyymmdd
     #gmt plot $point1 -i0,1 -W0.8p --FORMAT_DATE_IN=yyyymmdd 

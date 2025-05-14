@@ -1,38 +1,47 @@
 #!/bin/csh -f
 
-## Zhao Xiangjun
+##
 
-gmt set MAP_TICK_LENGTH 3p MAP_FRAME_PEN 0.9
-gmt set FORMAT_DATE_IN yyyymmdd FORMAT_DATE_MAP o FORMAT_TIME_PRIMARY_MAP abbreviated
-gmt set FONT_ANNOT_PRIMARY 8p,Helvetica,black FONT_ANNOT_SECONDARY 10p,Helvetica,black FONT_LABEL 10p,Helvetica-Bold
+if ($#argv != 1) then
+
+	echo "	"
+
+	echo "	usage: ./plot_timeseries.csh name_ts_disp.txt   "
+
+	echo "	"
+
+	echo "	"
+	echo "	"
+	exit 1
+endif
+
+set point1 = $1
+set J = -JX15c/5c
+gmt set FONT_ANNOT_PRIMARY 6p
+gmt set FONT_ANNOT_SECONDARY 8p
+gmt set MAP_FRAME_PEN 1p
+gmt set FORMAT_DATE_MAP o
+gmt set FORMAT_TIME_PRIMARY_MAP abbreviated
+gmt set MAP_TICK_LENGTH 4p
+set point_name = `echo $point1 | awk -F_ '{print $1}'`
+set wesn1 = `gmt info -C $point1 -fT -I50 --FORMAT_DATE_IN=yyyymmdd`
+set w1 = `echo $wesn1 | awk '{print $1}'`
+set e1 = `echo $wesn1 | awk '{print $2}'`
+set s1 = `echo $wesn1 | awk '{print $3}'`
+set n1 = `echo $wesn1 | awk '{print $4}'`
+set s1 = `expr $s1 - 20`
+set n1 = `expr $n1 + 20`
+set R1 = -R$w1/$e1/$s1/$n1
+echo $R1
 
 
 
-#foreach point (`cat $1`)
 
-# plot P1
-	set point = $1
-	echo plot $point
-	set name = `echo $point | awk -F. '{print $1}'`
-	set wesn = `gmt info -C $point -fT -I10 --FORMAT_DATE_IN=yyyymmdd`
-	set w = `echo $wesn | awk '{print $1}'`
-	set e = `echo $wesn | awk '{print $2}'`
-	set s = `echo $wesn | awk '{print $3}'`
-	set n = `echo $wesn | awk '{print $4}'`
-	# set the limit of axis a little big larger for better visualization
-	@ s = $s - 10
-	@ n = $n + 10
-	set R = -R$w/$e/$s/$n
-	echo $R
-	gmt begin $name png
-		gmt basemap $R -JX10c/4c -Bsx1Y -Bpxa3Of1o -Byaf+l"Displacement(mm)" -BWSen 
-		gmt plot  $point -Sc0.1 -W0.5p,black,solid -Gred 
-		#echo "20171201 100 P1" | gmt pstext -R -J -N -F+f8p,Helvetica,black+jLB -K -O -P >> $psout
-	gmt end show
-#end
-
-
-
-
-
+gmt begin $point_name png
+	gmt basemap $J $R1 -Bsx1Y -Bpxa3Of1o -Byaf+l"Dislacement (mm)" -BnSWe 
+	gmt plot $point1 -i0,1 -Sc0.1 -W0.5p,black,solid -Gred --FORMAT_DATE_IN=yyyymmdd 
+    #gmt plot $point1 -i0,1 -W0.8p --FORMAT_DATE_IN=yyyymmdd 
+    echo $point_name | gmt text $J $R1  -F+cTL -Dj0.1c/0.1c 
+    
+gmt end 
 
