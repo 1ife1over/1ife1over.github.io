@@ -11,7 +11,7 @@ order: 4
 
 ## 👋 你好，欢迎来到我的博客网站！
 
-![图片说明文字](/assets/img/picture/about.jpg)
+![图片说明文字](/assets/img/picture/about2.jpg)
 
 我是一名来自 **中国矿业大学（北京）** 的博士研究生，专业为 **测绘科学与技术**，研究方向是 **InSAR 技术与应用**。
 
