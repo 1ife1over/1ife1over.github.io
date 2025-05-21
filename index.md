@@ -1,4 +1,4 @@
 ---
 layout: home
-# Index page
+title: 我的博客首页
 ---
