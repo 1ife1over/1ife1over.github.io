@@ -213,7 +213,7 @@ comments: true
     cd ..
     ```    
 
-- 📢📢📢 如果在这一步，设置了解缠范围。需要将相干性文件`correct.grd`进行对应的裁剪，使用脚本：
+- 📢📢📢 如果在这一步，设置了解缠范围。需要将相干性文件`corr.grd`进行对应的裁剪，使用脚本：
 
     [corr_cut.csh](/code/corr_cut.csh)
 
@@ -322,7 +322,7 @@ gacos_select.csh intf.list
     ```bash
     ls */corr.grd > corr.list
     stack_corr.csh corr.list meancorr.grd
-    mask_meancorr.grd meancorr.grd thresholds
+    mask_meancorr.csh meancorr.grd thresholds
     ```    
     
     > thresholds一般取0.12
