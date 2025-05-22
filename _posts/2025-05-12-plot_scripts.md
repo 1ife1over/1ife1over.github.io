@@ -90,9 +90,16 @@ GMT中文手册，需要经产翻阅，内容非常详细
     
 - shp要素数据转GMT：
 
-   [参考网站](https://docs.gmt-china.org/latest/utilities/gdal/#ogr2ogr/)
+> 📢注意，在GMT6.1版本后，可直接绘制shp数据， 一个shapefile文件通常至少包含三个文件`.shp`、`.shx` 和 `.dbf `。如果觉得文件太多，也可转为`gmt`格式，仅需一个文件绘图。
+`
+   - GMT6.5版本[参考网站](https://docs.gmt-china.org/latest/utilities/gdal/#ogr2ogr/)
 
-    ```bash
-    ogr2ogr -f "" A.shp
-    ```
+        ```bash
+        ogr2ogr -f "" A.shp
+        ```
 
+    - GMT6.0版本[参考网站](https://docs.gmt-china.org/6.0/dataset/gadm/?highlight=ogr2ogr)    
+
+        ```
+        ogr2ogr -f OGR_GMT A.gmt A.shp
+        ```
