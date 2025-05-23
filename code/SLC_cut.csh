@@ -26,7 +26,7 @@ foreach line (`awk '{print $1}' SLC.list`)
   ln -s $slc_path/$name".SLC" .
   ln -s $slc_path/$name".PRM" .
   ln -s $slc_path/$name".LED" .
-  cut_slc $name".PRM" $name"_new" 0/15851/3282/12192
+  cut_slc $name".PRM" $name"_new" 0/13440/0/11312
  
   echo "finish cutting $name"
   rm $name".PRM" $name".SLC"
