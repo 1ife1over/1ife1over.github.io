@@ -34,7 +34,7 @@ comments: true
 首先按照子条带`F1` `F2` `F3`，对数据进行处理，文件目录设置如下：
 ![图片说明文字](/assets/img/picture/dir.png)
 
-- 将相应的`*.tiff` `*.xml` 文件放置在`raw/`文件夹
+- 将相应的`*.tiff` `*.xml` 文件链接至`raw/`目录, 在`raw`目录执行以下命令:
 
     [link_S1.csh](/code/link_S1.csh)
 
@@ -43,7 +43,7 @@ comments: true
     ```
 
 
-- 将轨道`*.EOF` 文件放置在`raw/`文件夹
+- 将轨道`*.EOF` 文件链接至`raw/`目录, 在`raw`目录执行以下命令:
 
     [link_S1_orbits.csh](/code/link_S1_orbits.csh)
 
@@ -52,7 +52,7 @@ comments: true
     ```
     > 此时会生成一个`data.in`文件，其中具有数据文件名（无后缀）和轨道，用`:`分隔
 
-- 将DEM`dem.grd`文件分别放置在`raw/` `topo/`文件夹
+- 将DEM`dem.grd`文件分别链接至`raw/` `topo/`目录。
 
 ---
 ## 2. 📚 图像配准 
