@@ -13,6 +13,8 @@ math: true
 
 ![模型拟合](/assets/img/picture/modelfit1.png)
 
+---
+
 ## 📌 1. 背景简介
 
 在InSAR时间序列分析中，地表形变信号通常不仅包含长期趋势（如地面沉降），也包含显著的**季节性形变分量**，如因地下水波动导致的年/半年周期信号。
@@ -85,6 +87,8 @@ $$
 
 🧠 所有数据最终按行列展开，逐像元进行拟合，最后再 reshape 为二维图像保存。
 
+---
+
 ## 3. 💡单点的模型拟合
 
 为了研究某个点的季节性形变特征信息，我们仅需简单的对单个点的时间序列拟合。
@@ -98,7 +102,11 @@ $$
 即可在matlab工作区中得到模型参数信息，同时也提供了一个简单的图像输出：
 ![模型拟合](/assets/img/picture/modelfit2.png)
 
+---
 
+参考文献📚 :
+  1. Wei Tang\*, Xiangjun Zhao, Mahdi Motagh, *et al.* (2022). **Land subsidence and rebound in the Taiyuan basin, northern China, in the context of inter-basin water transfer and groundwater management**. *Remote Sensing of Environment*, *269*, 112792. [https://doi.org/10.1016/j.rse.2021.112792](https://doi.org/10.1016/j.rse.2021.112792)
+  2. Wei Tang\*, Xiangjun Zhao, Gang Bi, *et al.* (2023). **Quantifying seasonal ground deformation in Taiyuan basin, China, by Sentinel-1 InSAR time series analysis**. *Journal of Hydrology*, *622*, 129654. [https://doi.org/10.1016/j.jhydrol.2023.129654](https://doi.org/10.1016/j.jhydrol.2023.129654)
   
   
 
