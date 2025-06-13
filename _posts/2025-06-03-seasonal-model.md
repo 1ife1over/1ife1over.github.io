@@ -105,8 +105,8 @@ $$
 ---
 
 参考文献📚 :
-  1. Wei Tang\*, Xiangjun Zhao, Mahdi Motagh, *et al.* (2022). **Land subsidence and rebound in the Taiyuan basin, northern China, in the context of inter-basin water transfer and groundwater management**. *Remote Sensing of Environment*, *269*, 112792. [https://doi.org/10.1016/j.rse.2021.112792](https://doi.org/10.1016/j.rse.2021.112792)
-  2. Wei Tang\*, Xiangjun Zhao, Gang Bi, *et al.* (2023). **Quantifying seasonal ground deformation in Taiyuan basin, China, by Sentinel-1 InSAR time series analysis**. *Journal of Hydrology*, *622*, 129654. [https://doi.org/10.1016/j.jhydrol.2023.129654](https://doi.org/10.1016/j.jhydrol.2023.129654)
+- Wei Tang\*, Xiangjun Zhao, Mahdi Motagh, *et al.* (2022). **Land subsidence and rebound in the Taiyuan basin, northern China, in the context of inter-basin water transfer and groundwater management**. *Remote Sensing of Environment*, *269*, 112792. [https://doi.org/10.1016/j.rse.2021.112792](https://doi.org/10.1016/j.rse.2021.112792)
+- Wei Tang\*, Xiangjun Zhao, Gang Bi, *et al.* (2023). **Quantifying seasonal ground deformation in Taiyuan basin, China, by Sentinel-1 InSAR time series analysis**. *Journal of Hydrology*, *622*, 129654. [https://doi.org/10.1016/j.jhydrol.2023.129654](https://doi.org/10.1016/j.jhydrol.2023.129654)
   
   
 
