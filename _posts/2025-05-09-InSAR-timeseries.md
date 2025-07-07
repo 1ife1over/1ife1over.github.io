@@ -226,7 +226,40 @@ comments: true
 ## 7. ☁️ GACOS大气校正 (选做)
 > GACOS大气校正能够较好的去除与地形相关的对流层大气误差, 通常我们用GACOS进行大气校正。
 
-- 在`merge`目录下，我们选择并行gacos校正：
+- 🎉 **GMTSAR 最新版支持 GACOS 大气校正脚本！**<br>
+    2025 年 7 月 2 日发布的`GMTSAR github`脚本，已正式集成我们贡献的 **GACOS 大气校正脚本**！
+    现在，安装最新版 GMTSAR 后，可以**直接调用内置脚本**进行 GACOS 大气校正，使用更便捷，集成更紧密。
+
+    - 📂 脚本说明
+
+        GMTSAR 中提供两个 GACOS 大气校正脚本：
+        - `make_gacos_correction.csh`：标准串行版本  
+        - `make_gacos_correction_parallel.csh`：**并行版本**（推荐）
+
+    - 🚀 如何使用（以并行脚本为例）
+
+        在 `merge/` 目录下，使用如下命令运行并行大气校正脚本：
+
+        ```bash
+        make_gacos_correction_parallel.csh intflist GACOS_path ref_range ref_azimuth dem.grd Ncores
+        ```
+
+    - 参数说明：
+
+        | 参数 | 含义 |
+        |------|------|
+        | `intflist` | 干涉图列表文件（每行为一对干涉图） |
+        | `GACOS_path` | GACOS 数据所在路径（示例：`/GACOS_path/`） |
+        | `ref_range` | 参考点的 Range 方向像素坐标 |
+        | `ref_azimuth` | 参考点的 Azimuth 方向像素坐标 |
+        | `dem.grd` | 匹配 InSAR 的地形高程文件 |
+        | `Ncores` | 并行运行使用的核心数量 |
+
+    > 💡 参考点选择：请在研究区中选取稳定点，获取 ref_range 和 ref_azimuth。详细计算方法见下节说明。
+
+    - 该并行脚本会自动调用 make_gacos_correction.csh 逐个干涉图执行大气校正任务。
+
+- **如果没有使用最新版的GMTSAR**，也可以自行下载官网脚本，或使用下面脚本（版本较老）。在`merge`目录下，我们选择并行gacos校正：
 
     [make_gacos_correction_parallel.csh](/code/make_gacos_correction_parallel.csh)<br>
     [make_gacos_correction.csh](/code/make_gacos_correction.csh)
