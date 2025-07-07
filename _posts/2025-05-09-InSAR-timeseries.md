@@ -273,22 +273,22 @@ comments: true
      `set line_center = 2422`<br>
      💡这是参考点的雷达坐标，一定要修改，选择研究区内稳定参考点。
 
-    - 地理坐标系转雷达坐标系（参考点）：
+- 地理坐标系转雷达坐标系（参考点）：
 
-        ```bash
-        proj_ll2ra_ascii.csh trans.dat points_ll.txt points_ra.txt
-        ```
+  ```bash
+  proj_ll2ra_ascii.csh trans.dat points_ll.txt points_ra.txt
+  ```
 
-        > 至少需要三个点才能转换，三个点不能离得太近，不能在一条直线。<br>
-            格式为`x` `y` `name`
+  > 至少需要三个点才能转换，三个点不能离得太近，不能在一条直线。<br>
+    格式为`x` `y` `name`
 
-> 👀 解缠和gacos校正后的干涉对仍需检查，需剔除（或重新处理）错误干涉对，可在`merge`目录执行脚本：
+- 👀 解缠和gacos校正后的干涉对仍需检查，需剔除（或重新处理）错误干涉对，可在`merge`目录执行脚本：
 
-[gacos_select.csh](/code/gacos_select.csh)
+  [gacos_select.csh](/code/gacos_select.csh)
 
-```bash
-gacos_select.csh intf.list
-```    
+  ```bash
+  gacos_select.csh intf.list
+  ```    
 
 
 ---
