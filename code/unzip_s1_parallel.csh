@@ -26,7 +26,7 @@ set ncores = $2
 ls ${datadir}/*.zip > zipfile.list
 set num = 1
 foreach file (`cat zipfile.list`)
-  echo "./unzip_s1.csh $file $num > log.txt" >> unzip_batch.cmd
+  echo "./unzip_sentinel-1.csh $file $num > log.txt" >> unzip_batch.cmd
   @ num = $num + 1
 end
 
