@@ -81,9 +81,7 @@ $$
     `phase_annual.grd` 年周期相位<br>
     `phase_semiannual.grd` 半年周期相位<br>
     `rms.grd` 残差<br>
-    🌟请注意，如果需要将相位改为月度单位，需将脚本内容改为如下：
-      `phase_annual(i)=qtan(d,c)*180/pi/30;` <br>
-      `phase_semiannual(i)=qtan(f,e)*180/pi/30;`
+    🌟请注意，代码中默认相位为月度单位，范围为1-13！
 
 🧠 所有数据最终按行列展开，逐像元进行拟合，最后再 reshape 为二维图像保存。
 
