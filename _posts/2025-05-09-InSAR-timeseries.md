@@ -150,7 +150,7 @@ comments: true
     ```bash
     ls -d 20* > intf_list
     ```
-- 使用`create_merge_input.csh`脚本，生成 `merge.in`
+- 然后在**`merge`**目录下，使用`create_merge_input.csh`脚本，生成 `merge.in`
     ```bash
     create_merge_input.csh intf_list path mode 
     ```
