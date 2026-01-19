@@ -145,12 +145,19 @@ comments: true
 ---
 ## 4. 🌊 合并子条带 
 
-- 首先制作merge.in文件，使用`create_merge_input.csh`脚本
+- 合并子条带前，需要先准备好干涉对列表文件 `intflist`（注意不是 `intf.in`）。
+   在其中一个子条带（F1/F2/F3）的 **`intf_all`** 目录下执行以下命令生成intf_list文件
+    ```bash
+    ls -d 20* > intf_list
+    ```
+- 使用`create_merge_input.csh`脚本，生成 `merge.in`
     ```bash
     create_merge_input.csh intf_list path mode 
     ```
     > mode 0 是合并 3 个subswaths, mode 1 是合并 F1/F2, mode 2 is 合并 F2/F3<br>
     > 例如: `create_merge_input.csh intflist .. 0 > merge.in`
+    > 
+    
 - ⚠️注意将含有超级主影像日期的行全部置顶，确保所有图像都使用相同的坐标处理，并且最终网格大小相同。
 
 - 将配置文件`batch_tops.config`复制到`merge`目录，`dem.grd`也链接过来。
