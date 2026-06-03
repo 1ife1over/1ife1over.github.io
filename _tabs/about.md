@@ -11,7 +11,55 @@ order: 4
 
 ## 👋 你好，欢迎来到我的博客网站！
 
-![图片说明文字](/assets/img/picture/about2.jpg)
+<style>
+  .about-carousel {
+    position: relative;
+    width: min(100%, 760px);
+    aspect-ratio: 16 / 9;
+    margin: 1.5rem auto;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.14);
+  }
+
+  .about-carousel > a,
+  .about-carousel > img {
+    position: absolute;
+    inset: 0;
+    display: block;
+    opacity: 0;
+    animation: about-carousel-fade 8s infinite;
+  }
+
+  .about-carousel img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+  }
+
+  .about-carousel > a:nth-of-type(2),
+  .about-carousel > img:nth-of-type(2) {
+    animation-delay: 4s;
+  }
+
+  @keyframes about-carousel-fade {
+    0%,
+    45% {
+      opacity: 1;
+    }
+
+    55%,
+    100% {
+      opacity: 0;
+    }
+  }
+</style>
+
+<div class="about-carousel" aria-label="关于页面图片轮播">
+  <img src="/assets/img/picture/about.jpg" alt="关于页面照片 1">
+  <img src="/assets/img/picture/about2.jpg" alt="关于页面照片 2">
+</div>
 
 我是一名来自 **中国矿业大学（北京）** 的博士研究生，专业为 **测绘科学与技术**，研究方向是 **InSAR 技术与应用**。
 
